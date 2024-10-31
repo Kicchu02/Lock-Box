@@ -8,7 +8,6 @@ LockBox is a secure, cross-platform password manager built with Electron, React,
 - **Password Encryption**: All stored passwords are encrypted for safety.
 - **Password Generator**: Built-in generator to create strong, customizable passwords.
 - **Password Management**: Add, edit, delete, and categorize entries easily.
-- **Backup and Restore**: Export and import encrypted backups for easy transfer.
 - **Search & Filtering**: Quickly find entries using search and tags.
 
 ## Tech Stack
