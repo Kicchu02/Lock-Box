@@ -7,7 +7,11 @@ import {
   useNavigate,
 } from 'react-router-dom';
 import './App.css';
+import { GeneratePassword } from './pages/GeneratePassword';
+import { HomeScreenLayout } from './pages/HomeScreenLayout';
 import { LockScreen } from './pages/LockScreen';
+import { ManagePasswords } from './pages/ManagePasswords';
+import { ViewPasswords } from './pages/ViewPasswords';
 import { Routes as RoutesEnum } from './types/Routes';
 
 function Hello() {
@@ -28,8 +32,19 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Hello />} />
-        <Route path="/lock-screen" element={<LockScreen />} />
+        <Route path={RoutesEnum.Root} element={<Hello />} />
+        <Route path={RoutesEnum.LockScreen} element={<LockScreen />} />
+        <Route path={RoutesEnum.HomeScreen} element={<HomeScreenLayout />}>
+          <Route
+            path={RoutesEnum.GeneratePassword}
+            element={<GeneratePassword />}
+          />
+          <Route path={RoutesEnum.ViewPasswords} element={<ViewPasswords />} />
+          <Route
+            path={RoutesEnum.ManagePasswords}
+            element={<ManagePasswords />}
+          />
+        </Route>
       </Routes>
     </Router>
   );

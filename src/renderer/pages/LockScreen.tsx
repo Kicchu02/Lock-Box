@@ -1,11 +1,14 @@
 import { Button, Stack, TextField, Typography } from '@mui/material';
 import { LockKeyhole } from 'lucide-react';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { EMPTY_CHARACTER } from '../types/constants';
+import { Routes } from '../types/Routes';
 
 export function LockScreen(): React.ReactElement {
   const [password, setPassword] = useState(EMPTY_CHARACTER);
   const [isPasswordIncorrect, setIsPasswordIncorrect] = useState(false);
+  const navigate = useNavigate();
 
   const isButtonDisabled = (): boolean => {
     return password.length === 0;
@@ -53,6 +56,8 @@ export function LockScreen(): React.ReactElement {
             onClick={() => {
               // TODO: Must verify the password with the database and navigate to home screen
               setIsPasswordIncorrect(false);
+              // TODO: Must update mock validate to real validation
+              navigate(Routes.HomeScreen);
             }}
             disabled={isButtonDisabled()}
           >
