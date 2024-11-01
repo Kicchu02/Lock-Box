@@ -57,7 +57,7 @@ export function LockScreen(): React.ReactElement {
               // TODO: Must verify the password with the database and navigate to home screen
               setIsPasswordIncorrect(false);
               // TODO: Must update mock validate to real validation
-              navigate(Routes.HomeScreen);
+              navigate(Routes.GeneratePassword);
             }}
             disabled={isButtonDisabled()}
           >
