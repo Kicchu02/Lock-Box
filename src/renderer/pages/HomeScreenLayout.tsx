@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material';
-import { Edit, KeyRound, View } from 'lucide-react';
+import { Edit, KeyRound, UserRoundCog, View } from 'lucide-react';
 import React, { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
@@ -10,6 +10,7 @@ enum DrawerItems {
   GeneratePassword = 'Generate password',
   ViewPasswords = 'View passwords',
   ManagePasswords = 'Manage passwords',
+  UserSettings = 'User Settings',
 }
 
 export function HomeScreenLayout(): React.ReactElement {
@@ -52,7 +53,16 @@ export function HomeScreenLayout(): React.ReactElement {
             isSelected={selectedDrawerItem === DrawerItems.ManagePasswords}
             onSelect={() => {
               setSelectedDrawerItem(DrawerItems.ManagePasswords);
-              navigate(`${Routes.ManagePasswords}`);
+              navigate(Routes.ManagePasswords);
+            }}
+          />
+          <DrawerListItem
+            text={DrawerItems.UserSettings}
+            icon={<UserRoundCog />}
+            isSelected={selectedDrawerItem === DrawerItems.UserSettings}
+            onSelect={() => {
+              setSelectedDrawerItem(DrawerItems.UserSettings);
+              navigate(Routes.UserSettings);
             }}
           />
         </Stack>

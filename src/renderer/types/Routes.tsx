@@ -5,4 +5,5 @@ export enum Routes {
   GeneratePassword = '/home-screen/generate-password',
   ViewPasswords = '/home-screen/view-passwords',
   ManagePasswords = '/home-screen/manage-passwords',
+  UserSettings = '/home-screen/user-settings',
 }

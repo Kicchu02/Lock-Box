@@ -11,6 +11,7 @@ import { GeneratePassword } from './pages/GeneratePassword';
 import { HomeScreenLayout } from './pages/HomeScreenLayout';
 import { LockScreen } from './pages/LockScreen';
 import { ManagePasswords } from './pages/ManagePasswords';
+import { UserSettings } from './pages/UserSettings';
 import { ViewPasswords } from './pages/ViewPasswords';
 import { Routes as RoutesEnum } from './types/Routes';
 
@@ -44,6 +45,7 @@ export default function App() {
             path={RoutesEnum.ManagePasswords}
             element={<ManagePasswords />}
           />
+          <Route path={RoutesEnum.UserSettings} element={<UserSettings />} />
         </Route>
       </Routes>
     </Router>
