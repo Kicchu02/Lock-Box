@@ -2,7 +2,7 @@ import { Button, Stack, Typography } from '@mui/material';
 import { Lock } from 'lucide-react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import LockBoxIcon from '../../../assets/icons/LockBox_icon.png';
+import LockBoxIcon from '../../../assets/icons/LockBox_icon_no_background.png';
 import { Routes } from '../types/Routes';
 
 export function AppHeader(): React.ReactElement {
