@@ -42,7 +42,7 @@ export function LockScreen(): React.ReactElement {
             variant="outlined"
             size="small"
             type="password"
-            placeholder="Password"
+            label="Password"
             error={isPasswordIncorrect}
             helperText={isPasswordIncorrect && 'Incorrect password'}
             value={password}
