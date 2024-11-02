@@ -27,7 +27,6 @@ export function LockScreen(): React.ReactElement {
         paddingY={6}
         gap={4}
         bgcolor="Background"
-        border="ActiveBorder"
         borderRadius={2}
         boxShadow={1}
       >
