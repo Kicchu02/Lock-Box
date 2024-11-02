@@ -1,8 +1,6 @@
 import {
   Alert,
   Button,
-  Checkbox,
-  FormControlLabel,
   IconButton,
   Slider,
   Snackbar,
@@ -12,6 +10,8 @@ import {
 } from '@mui/material';
 import { Copy, Save } from 'lucide-react';
 import React, { useState } from 'react';
+import { LabeledCheckbox } from '../components/LabeledCheckbox';
+import { PageHeader } from '../components/PageHeader';
 import {
   DEFAULT_NUMBER_OF_CHARACTERS,
   EMPTY_CHARACTER,
@@ -103,33 +103,27 @@ export function GeneratePassword(): React.ReactElement {
 
   return (
     <Stack height="100%" width="100%">
-      <Stack
-        direction="row"
-        padding={2}
-        borderBottom={1}
-        borderColor="InactiveBorder"
-        justifyContent="space-between"
-      >
-        <Typography variant="h6" color="textPrimary">
-          Generate Password
-        </Typography>
-        <Button
-          variant="contained"
-          size="small"
-          startIcon={<Save size={20} />}
-          disabled={
-            applicationOrDomainName === EMPTY_CHARACTER ||
-            generatedPassword === EMPTY_CHARACTER
-          }
-          onClick={() => {
-            // TODO: Must insert record into db.
-            setIsSuccessSnackbarShown(true);
-            resetStates();
-          }}
-        >
-          Save password
-        </Button>
-      </Stack>
+      <PageHeader
+        heading="Generate Password"
+        rightContent={
+          <Button
+            variant="contained"
+            size="small"
+            startIcon={<Save size={20} />}
+            disabled={
+              applicationOrDomainName === EMPTY_CHARACTER ||
+              generatedPassword === EMPTY_CHARACTER
+            }
+            onClick={() => {
+              // TODO: Must insert record into db.
+              setIsSuccessSnackbarShown(true);
+              resetStates();
+            }}
+          >
+            Save password
+          </Button>
+        }
+      />
       <Stack padding={1} alignItems="center" height="100%">
         <Stack padding={5} gap={5} width="560px">
           <TextField
@@ -153,37 +147,25 @@ export function GeneratePassword(): React.ReactElement {
                 setNumberOfCharacters(value as number);
               }}
             />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={isCapitalLettersIncluded}
-                  onChange={(event) => {
-                    setIsCapitalLettersIncluded(event.target.checked);
-                  }}
-                />
-              }
+            <LabeledCheckbox
+              isChecked={isCapitalLettersIncluded}
+              onChange={(event) => {
+                setIsCapitalLettersIncluded(event.target.checked);
+              }}
               label="Include capital letters"
             />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={isNumbersIncluded}
-                  onChange={(event) => {
-                    setIsNumbersIncluded(event.target.checked);
-                  }}
-                />
-              }
+            <LabeledCheckbox
+              isChecked={isNumbersIncluded}
+              onChange={(event) => {
+                setIsNumbersIncluded(event.target.checked);
+              }}
               label="Include numbers"
             />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={isSpecialCharacterIncluded}
-                  onChange={(event) => {
-                    setIsSpecialCharacterIncluded(event.target.checked);
-                  }}
-                />
-              }
+            <LabeledCheckbox
+              isChecked={isSpecialCharacterIncluded}
+              onChange={(event) => {
+                setIsSpecialCharacterIncluded(event.target.checked);
+              }}
               label="Include special characters"
             />
           </Stack>
