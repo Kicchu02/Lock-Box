@@ -2,6 +2,7 @@ import { Button, Stack, TextField, Typography } from '@mui/material';
 import { LockKeyhole } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import BackgroundImage from '../../../assets/pm-bg.jpg';
 import { EMPTY_CHARACTER } from '../types/constants';
 import { Routes } from '../types/Routes';
 
@@ -16,6 +17,11 @@ export function LockScreen(): React.ReactElement {
 
   return (
     <Stack
+      style={{
+        backgroundImage: `url(${BackgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
       height="100vh"
       alignItems="center"
       justifyContent="center"
@@ -23,12 +29,12 @@ export function LockScreen(): React.ReactElement {
       bgcolor="InactiveCaptionText"
     >
       <Stack
-        paddingX={10}
-        paddingY={6}
+        paddingX={15}
+        paddingY={8}
         gap={4}
         bgcolor="Background"
-        border="ActiveBorder"
-        borderRadius={2}
+        border="2px solid black"
+        borderRadius={3}
         boxShadow={1}
       >
         <Stack alignItems="center" gap={1}>
