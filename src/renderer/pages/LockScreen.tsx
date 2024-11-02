@@ -32,10 +32,12 @@ export function LockScreen(): React.ReactElement {
         paddingX={15}
         paddingY={8}
         gap={4}
-        bgcolor="Background"
-        border="2px solid black"
+        bgcolor="rgba(255, 255, 255, 0.8)" 
         borderRadius={3}
-        boxShadow={1}
+        boxShadow={5}
+        style={{
+          backdropFilter: 'blur(50px)', 
+        }}
       >
         <Stack alignItems="center" gap={1}>
           <LockKeyhole size={32} />
