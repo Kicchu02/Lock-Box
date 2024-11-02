@@ -27,7 +27,6 @@ export function LockScreen(): React.ReactElement {
         paddingY={6}
         gap={4}
         bgcolor="Background"
-        border="ActiveBorder"
         borderRadius={2}
         boxShadow={1}
       >
@@ -42,7 +41,7 @@ export function LockScreen(): React.ReactElement {
             variant="outlined"
             size="small"
             type="password"
-            placeholder="Password"
+            label="Password"
             error={isPasswordIncorrect}
             helperText={isPasswordIncorrect && 'Incorrect password'}
             value={password}

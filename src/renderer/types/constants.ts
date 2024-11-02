@@ -1,1 +1,9 @@
 export const EMPTY_CHARACTER = '';
+
+export const MIN_NUMBER_OF_CHARACTERS = 4;
+
+export const DEFAULT_NUMBER_OF_CHARACTERS = 12;
+
+export const MAX_NUMBER_OF_CHARACTERS = 50;
+
+export const SNACKBAR_AUTO_HIDE_DURATION_IN_MS = 3000;
