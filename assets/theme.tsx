@@ -21,16 +21,16 @@ declare module '@mui/material/styles' {
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#FF9800', // orange
+      main: '#4169E1', // blue
     },
     secondary: {
       main: '#dc004e', // crimson
     },
     text: {
-      primary: '#FF9800', // orange
+      primary: '#9E9E9E', // orange
     },
     label: {
-      main: '#4CAF50', // green
+      main: '#9E9E9E', // blue
     },
     ActiveBorder: {
       main: '#9E9E9E', // medium gray
