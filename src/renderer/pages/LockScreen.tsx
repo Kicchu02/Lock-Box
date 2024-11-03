@@ -32,7 +32,7 @@ export function LockScreen(): React.ReactElement {
       >
         <Stack alignItems="center" gap={1}>
           <LockKeyhole size={32} />
-          <Typography variant="h4" color="textPrimary">
+          <Typography variant="h4" color="label">
             Unlock Lock Box
           </Typography>
         </Stack>
